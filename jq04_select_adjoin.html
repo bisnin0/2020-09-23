@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+<script>
+	document.title = "인접선택자";
+	/*
+	$(documnet).ready(function(){ //document 로딩이 끝나면 실행되는 이벤트
+		//jquery
+	});
+	*/
+	
+	$(function(){ 	//(documnet).ready를생략하고 써도 ready이벤트다.
+		//jquery
+		
+		//  * : 모든선택자,  tag : 태그선택자(h1등등), # : 아이디선택자,  . : 클래스선택자, > : 자손선택자, 스페이스바(빈칸) : 후손선택자  
+		
+		//children() 선택자 : 선택자의 자손을 선택한다.
+		
+		$("div").children().css("color", "green");
+		//div 태그의 자손중에 클래스가 .one인경우 선택
+		$("div").children(".one").css("border","1px solid red");
+		
+		// next() : 선택자의 다음에 있는 객체를 선택한다.
+		$("#first").next().css("background-color","pink");
+		// prev() : 선택자 이전의 객체를 선택한다.
+		$("img").prev().css("border","2px dotted gray");
+		// parent() : 선택자의 부모 객체를 선택한다.
+		$("img").parent().css("background-color","#eee");
+		//siblings() : 선택자의 형제들을 선택한다.(자기는 빼고)
+		$("#first").siblings().css("border","3px double blue");
+		
+		$("img").prev().attr("title","인접선택자 연습중~~~~~~~~~~~~");
+	});
+</script>
+</head>
+<body>
+<div>
+	<h1 id="first">인접선택자</h1>
+	<h1 class="one">children 선택자</h1>
+	<h2 class="one">next 선택자</h2>
+	<h4>prev 선택자</h4>
+	<h4>parent 선택자</h4>
+	<h3>sibling 선택자</h3>
+	<h2>자손, 후손, 선택자</h2>
+	
+</div>
+<img src="../img/3.png"/>
+</body>
+</html>
